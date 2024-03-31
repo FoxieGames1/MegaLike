@@ -23,12 +23,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || Input.GetKey(KeyCode.A))
         {
             RB2D.velocity = new Vector2(-run_speed, RB2D.velocity.y);
         }
         else
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right")|| Input.GetKey(KeyCode.D))
         {
             RB2D.velocity = new Vector2(run_speed, RB2D.velocity.y);
         }
