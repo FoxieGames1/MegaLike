@@ -1,25 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckGround : MonoBehaviour
+public class GroundDetector : MonoBehaviour
 {
-    public bool isGrounded;
+    public float groundCheckDistance; // Distancia para el Raycast de verificación de suelo
+    public LayerMask groundLayer; // Capa del suelo
 
-    // Update is called once per frame
-    private void OnTriggerStay2D(Collider2D Col2D)
+    // Método para verificar si el jugador está en el suelo
+    public bool IsGrounded()
     {
-        if (Col2D.gameObject.tag == "Solid")
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
+
+        if (hit.collider != null)
         {
-            isGrounded = true;
+            Debug.Log("Ground detected: " + hit.collider.gameObject.name);
+            return true;
+        }
+        else
+        {
+            Debug.Log("No ground detected");
+            return false;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D Col2D)
-    {
-        if (Col2D.gameObject.tag == "Solid")
-        {
-            isGrounded = false;
-        }
-    }
 }
