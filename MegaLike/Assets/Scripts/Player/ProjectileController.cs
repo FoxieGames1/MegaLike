@@ -2,30 +2,56 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 10f;
-    public float lifetime = 2f;
-    public LayerMask targetLayers;
+    [SerializeField] private float speed;
+    [SerializeField] private float lifetimeDuration; // Duración de la vida útil de la bala
 
-    private Rigidbody2D rb;
+    private float direction;
+    [SerializeField] private float lifetimeTimer;
+    private bool hit;
 
-    void Start()
+    private BoxCollider2D boxCollider;
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, lifetime);
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    void Update()
+    private void Update()
     {
-        // Mueve el proyectil en la dirección especificada
-        rb.velocity = transform.right * speed;
-    }
+        //if (hit) return;
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (targetLayers == (targetLayers | (1 << other.gameObject.layer)))
+        // Movimiento de la bala
+        float movementSpeed = speed * Time.deltaTime * direction;
+        transform.Translate(movementSpeed, 0, 0);
+
+        lifetimeTimer += Time.deltaTime;
+        if (lifetimeTimer >= lifetimeDuration)
         {
-            // Destruir el proyectil al colisionar con un objeto de las capas objetivo
-            Destroy(gameObject);
+            Deactivate();
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        hit = true;
+        boxCollider.enabled = false;
+    }
+
+    public void SetDirection(float _direction)
+    {
+        lifetimeTimer = 0; 
+        direction = _direction;
+        gameObject.SetActive(true);
+        hit = false;
+        boxCollider.enabled = true;
+
+        float localScaleX = transform.localScale.x;
+        if (Mathf.Sign(localScaleX) != _direction) localScaleX = -localScaleX;
+        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+    }
+
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }
