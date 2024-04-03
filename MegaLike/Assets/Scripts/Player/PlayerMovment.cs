@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             else body.gravityScale = 7;
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Z))
                 Jump();
         }
         else wallJumpCooldown += Time.deltaTime;
@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
         }
+
         else if (onWall() && !isGrounded())
         {
             if (horizontalInput == 0)
