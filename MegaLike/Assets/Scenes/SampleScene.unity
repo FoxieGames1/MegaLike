@@ -12171,7 +12171,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0019319654}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12182,7 +12182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.7797493}
   m_EdgeRadius: 0
 --- !u!212 &682663882
 SpriteRenderer:
@@ -12264,7 +12264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b31478061e16034698a9f0f0a6e6710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 0.3
+  attackCooldown: 0.1
   firePoint: {fileID: 111034721}
   keysAttack: 66000000
   fireballs:
@@ -59775,6 +59775,14 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1864193847}
+    - target: {fileID: 3093096389656470883, guid: e1c3b38521f6b4c48a9056b9f5506aff, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4118686
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093096389656470883, guid: e1c3b38521f6b4c48a9056b9f5506aff, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2059344
+      objectReference: {fileID: 0}
     - target: {fileID: 3397208295342339593, guid: e1c3b38521f6b4c48a9056b9f5506aff, type: 3}
       propertyPath: m_LocalPosition.y
       value: 10.16
@@ -59786,6 +59794,10 @@ PrefabInstance:
     - target: {fileID: 3750657574259812516, guid: e1c3b38521f6b4c48a9056b9f5506aff, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4757365563367710535, guid: e1c3b38521f6b4c48a9056b9f5506aff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 5328778729723180408, guid: e1c3b38521f6b4c48a9056b9f5506aff, type: 3}
       propertyPath: m_Name
