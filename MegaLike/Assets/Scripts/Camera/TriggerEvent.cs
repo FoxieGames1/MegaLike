@@ -4,6 +4,9 @@ using UnityEngine;
 public class TriggerEvent : MonoBehaviour
 {
     [SerializeField]
+    public float DBLend;
+
+    [SerializeField]
     [Header("Camera Switcher")]
     [Tooltip("Referencia al componente CameraSwitcher")]
     private CameraSwitcher cameraSwitcher;
@@ -15,6 +18,28 @@ public class TriggerEvent : MonoBehaviour
 
     private void Start()
     {
+        // Encuentra la cámara principal de Cinemachine en la escena
+        CinemachineBrain cinemachineBrain = FindObjectOfType<CinemachineBrain>();
+
+        if (cinemachineBrain != null)
+        {
+            cinemachineBrain.m_DefaultBlend.m_Time = DBLend;
+            if (DBLend == 1)
+            {
+                cinemachineBrain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
+            }
+            else
+            if (DBLend != 1)
+            {
+                cinemachineBrain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
+            }
+            
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró una cámara de Cinemachine en la escena.");
+        }
+
         // Obtener una referencia al componente CameraSwitcher
         cameraSwitcher = FindObjectOfType<CameraSwitcher>();
         if (cameraSwitcher == null)
@@ -31,6 +56,25 @@ public class TriggerEvent : MonoBehaviour
             // Pasar la referencia de la cámara secundaria al CameraSwitcher
             if (cameraSwitcher != null && cameraToSwitch != null)
             {
+                CinemachineBrain cinemachineBrain = FindObjectOfType<CinemachineBrain>();
+
+                if (cinemachineBrain != null)
+                {
+                    cinemachineBrain.m_DefaultBlend.m_Time = DBLend;
+                    if (DBLend == 1)
+                    {
+                        cinemachineBrain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
+                    }
+                    else
+                    if (DBLend != 1)
+                    {
+                        cinemachineBrain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("No se encontró una cámara de Cinemachine en la escena.");
+                }
                 cameraSwitcher.SwitchToSecondaryCamera(cameraToSwitch);
             }
             else
@@ -48,6 +92,26 @@ public class TriggerEvent : MonoBehaviour
             // Cambiar a la cámara principal cuando el jugador salga del trigger
             if (cameraSwitcher != null)
             {
+                CinemachineBrain cinemachineBrain = FindObjectOfType<CinemachineBrain>();
+
+                if (cinemachineBrain != null)
+                {
+                    cinemachineBrain.m_DefaultBlend.m_Time = 0.8f;
+                    if (DBLend == 1)
+                    {
+                        cinemachineBrain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.Cut;
+                    }
+                    else
+                    if (DBLend != 1)
+                    {
+                        cinemachineBrain.m_DefaultBlend.m_Style = CinemachineBlendDefinition.Style.EaseInOut;
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("No se encontró una cámara de Cinemachine en la escena.");
+                }
+
                 cameraSwitcher.SwitchToMainCamera();
             }
         }
