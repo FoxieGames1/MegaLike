@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - Bullet
   - StartPos
+  - Stairs
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Floor
   - Bullet
   - Wall
-  - 
+  - Stairs
   - 
   - 
   - 
