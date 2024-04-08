@@ -55,4 +55,11 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(damageAmount);
         }
     }
+
+    public void Respawn(Vector3 respawnPoint)
+    {
+        currentHealth = maxHealth; // Restaura la salud del jugador al máximo
+        transform.position = respawnPoint; // Reposiciona al jugador al punto de respawn
+        UpdateHealthUI(); // Actualiza la barra de salud
+    }
 }
