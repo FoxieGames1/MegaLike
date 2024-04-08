@@ -3,10 +3,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float lifetimeDuration; // Duración de la vida útil de la bala
+    [SerializeField] private float lifetimeDuration;
 
     private float direction;
-    [SerializeField] private float lifetimeTimer;
+    private float lifetimeTimer;
     private bool hit;
 
     private BoxCollider2D boxCollider;
@@ -18,9 +18,6 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        //if (hit) return;
-
-        // Movimiento de la bala
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
 
@@ -31,15 +28,9 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        hit = true;
-        boxCollider.enabled = false;
-    }
-
     public void SetDirection(float _direction)
     {
-        lifetimeTimer = 0; 
+        lifetimeTimer = 0;
         direction = _direction;
         gameObject.SetActive(true);
         hit = false;
@@ -48,6 +39,14 @@ public class Projectile : MonoBehaviour
         float localScaleX = transform.localScale.x;
         if (Mathf.Sign(localScaleX) != _direction) localScaleX = -localScaleX;
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!hit && collision.CompareTag("Enemy"))
+        {
+            hit = true;
+            Deactivate(); // Desactiva la bala al chocar con un enemigo
+        }
     }
 
     private void Deactivate()
