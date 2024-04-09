@@ -2,17 +2,24 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private float attackCooldown;
     [SerializeField] private Transform firePoint;
     [SerializeField] private KeyCode[] keysAttack;
     [SerializeField] private GameObject[] fireballs;
+    [SerializeField] private float attackCooldown;
 
     private PlayerMovement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
+    private Animator animator;
+
+    public float CooldownTimer { get { return cooldownTimer; } set { cooldownTimer = value;}}
+    public float AttackCooldown { get {  return attackCooldown; } set {  attackCooldown = value;}}
+
+    public KeyCode[] KeysAttack { get { return keysAttack; } set { keysAttack = value; } }
 
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -31,8 +38,6 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        cooldownTimer = 0;
-
         fireballs[FindFireball()].transform.position = firePoint.position;
         fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
@@ -46,4 +51,11 @@ public class PlayerAttack : MonoBehaviour
         }
         return 0;
     }
+
+    public void OnAttack()
+    {
+        animator.SetTrigger("isAttack");
+    }
+
+    
 }

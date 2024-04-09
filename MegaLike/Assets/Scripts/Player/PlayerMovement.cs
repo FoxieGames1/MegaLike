@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     private Rigidbody2D body;
     private BoxCollider2D boxCollider;
+    private Animator animator;
+    private PlayerAttack playerAttack;
     private float wallJumpCooldown;
     private float horizontalInput;
     public bool Start;
@@ -18,30 +20,55 @@ public class PlayerMovement : MonoBehaviour
     public bool TouchingStairs;
     [SerializeField] private float stairsSpeed;
 
-
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         HandleStairsInteractuable();
+        HandleMovement();
+        HandleJump();
 
-        if (horizontalInput > 0.01f)
-            transform.localScale = Vector3.one;
-        else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-1, 1, 1);
+        foreach (KeyCode key in playerAttack.KeysAttack)
+        {
+            if (Input.GetKeyDown(key) && playerAttack.CooldownTimer > playerAttack.AttackCooldown)
+            {
+                playerAttack.OnAttack();
+                break;
+            }
+        }
+    }
 
+    public void HandleMovement()
+    {
+        if (horizontalInput > 0.01f) transform.localScale = Vector3.one;
+        else if (horizontalInput < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
+
+        if (horizontalInput != 0 && isGrounded())
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+    }
+
+    public void HandleJump()
+    {
         if (wallJumpCooldown > 0.2f)
         {
             if (Start == false)
             {
                 body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
             }
-           
+
 
             if (onWall() && !isGrounded())
             {
@@ -59,10 +86,20 @@ public class PlayerMovement : MonoBehaviour
             }
 
             else body.gravityScale = 7;
-            if (Input.GetKeyDown(KeyCode.Z))
-                Jump();
+            if (Input.GetKeyDown(KeyCode.Z)) Jump();
         }
         else wallJumpCooldown += Time.deltaTime;
+
+        // Manejo de la animación de caída
+        if (!isGrounded() && !onWall())
+        {
+            animator.SetBool("isFalling", true);
+        }
+        else
+        {
+            animator.SetBool("isFalling", false);
+        }
+
     }
 
     private void HandleStairsInteractuable()
@@ -95,9 +132,15 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded())
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
+            animator.SetTrigger("isJumping");
+            animator.SetBool("isFalling", false);
+        }
+        else if (!onWall())
+        {
+            animator.SetBool("isFalling", true);
         }
 
-        else if (onWall() && !isGrounded())
+        if (onWall() && !isGrounded())
         {
             if (horizontalInput == 0)
             {
@@ -122,5 +165,4 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
         return raycastHit.collider != null;
     }
-
 }
