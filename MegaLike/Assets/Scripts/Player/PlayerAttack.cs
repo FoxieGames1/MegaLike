@@ -55,13 +55,13 @@ public class PlayerAttack : MonoBehaviour
         if (playerMovement.body.velocity.y == 0)
         {
             playerMovement.Control = false;
-            animator.SetTrigger("isAttack");
+            animator.SetBool("isAttack", true);
         }
         else
         if (playerMovement.body.velocity.y != 0)
         {
-            animator.SetTrigger("isAttack");
-            animator.SetTrigger("isJumping_Shoot");
+            animator.SetBool("isAttack", false);
+            animator.SetBool("isJumping_Shoot", false);
         }
     }
 }
