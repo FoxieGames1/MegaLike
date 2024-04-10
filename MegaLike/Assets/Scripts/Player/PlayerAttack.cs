@@ -11,11 +11,6 @@ public class PlayerAttack : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
     private Animator animator;
 
-    public float CooldownTimer { get { return cooldownTimer; } set { cooldownTimer = value;}}
-    public float AttackCooldown { get {  return attackCooldown; } set {  attackCooldown = value;}}
-
-    public KeyCode[] KeysAttack { get { return keysAttack; } set { keysAttack = value; } }
-
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -28,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(key) && cooldownTimer > attackCooldown)
             {
-                Attack();
+                OnAttackAnimation();
                 break;
             }
         }
@@ -36,8 +31,9 @@ public class PlayerAttack : MonoBehaviour
         cooldownTimer += Time.deltaTime;
     }
 
-    private void Attack()
+    private void Shooting()
     {
+        animator.SetTrigger("isAttack");
         fireballs[FindFireball()].transform.position = firePoint.position;
         fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
@@ -52,10 +48,11 @@ public class PlayerAttack : MonoBehaviour
         return 0;
     }
 
-    public void OnAttack()
+    public void OnAttackAnimation()
     {
         animator.SetTrigger("isAttack");
     }
+
 
     
 }

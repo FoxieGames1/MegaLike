@@ -34,15 +34,6 @@ public class PlayerMovement : MonoBehaviour
         HandleStairsInteractuable();
         HandleMovement();
         HandleJump();
-
-        foreach (KeyCode key in playerAttack.KeysAttack)
-        {
-            if (Input.GetKeyDown(key) && playerAttack.CooldownTimer > playerAttack.AttackCooldown)
-            {
-                playerAttack.OnAttack();
-                break;
-            }
-        }
     }
 
     public void HandleMovement()
