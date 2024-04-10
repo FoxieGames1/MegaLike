@@ -278,7 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_8
+      name: s1
       rect:
         serializedVersion: 2
         x: 128
@@ -299,7 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_9
+      name: s2
       rect:
         serializedVersion: 2
         x: 144
@@ -320,7 +320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_10
+      name: s3
       rect:
         serializedVersion: 2
         x: 160
@@ -341,7 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_11
+      name: s4
       rect:
         serializedVersion: 2
         x: 176
@@ -530,7 +530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_20
+      name: s5
       rect:
         serializedVersion: 2
         x: 128
@@ -551,7 +551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_21
+      name: s6
       rect:
         serializedVersion: 2
         x: 144
@@ -572,7 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_22
+      name: s7
       rect:
         serializedVersion: 2
         x: 160
@@ -593,7 +593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_23
+      name: s8
       rect:
         serializedVersion: 2
         x: 176
@@ -782,7 +782,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_32
+      name: s9
       rect:
         serializedVersion: 2
         x: 128
@@ -803,7 +803,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_33
+      name: s10
       rect:
         serializedVersion: 2
         x: 144
@@ -824,7 +824,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_34
+      name: s11
       rect:
         serializedVersion: 2
         x: 160
@@ -845,7 +845,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_35
+      name: s12
       rect:
         serializedVersion: 2
         x: 176
@@ -1097,7 +1097,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_47
+      name: s13
       rect:
         serializedVersion: 2
         x: 176
@@ -1307,7 +1307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_57
+      name: r1
       rect:
         serializedVersion: 2
         x: 144
@@ -1328,7 +1328,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_58
+      name: r2
       rect:
         serializedVersion: 2
         x: 160
@@ -1349,7 +1349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_59
+      name: r3
       rect:
         serializedVersion: 2
         x: 176
@@ -1559,7 +1559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_69
+      name: r4
       rect:
         serializedVersion: 2
         x: 144
@@ -1580,7 +1580,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_70
+      name: r5
       rect:
         serializedVersion: 2
         x: 160
@@ -1601,7 +1601,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_71
+      name: r6
       rect:
         serializedVersion: 2
         x: 176
@@ -1811,7 +1811,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_81
+      name: h1
       rect:
         serializedVersion: 2
         x: 144
@@ -1832,7 +1832,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_82
+      name: h2
       rect:
         serializedVersion: 2
         x: 160
@@ -1853,7 +1853,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_83
+      name: h3
       rect:
         serializedVersion: 2
         x: 176
@@ -1916,7 +1916,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_86
+      name: c-1
       rect:
         serializedVersion: 2
         x: 96
@@ -1937,7 +1937,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_87
+      name: c-2
       rect:
         serializedVersion: 2
         x: 112
@@ -1958,7 +1958,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_88
+      name: h4
       rect:
         serializedVersion: 2
         x: 144
@@ -1979,7 +1979,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_89
+      name: h5
       rect:
         serializedVersion: 2
         x: 160
@@ -2000,7 +2000,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_90
+      name: h6
       rect:
         serializedVersion: 2
         x: 176
@@ -2105,28 +2105,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_95
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d456ca724bc683408099d07ad5e374f
-      internalID: -1059205907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TileSetAdvance-1_96
+      name: c-3
       rect:
         serializedVersion: 2
         x: 96
@@ -2147,7 +2126,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_97
+      name: c-4
       rect:
         serializedVersion: 2
         x: 112
@@ -2168,7 +2147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_98
+      name: h7
       rect:
         serializedVersion: 2
         x: 144
@@ -2189,7 +2168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_99
+      name: h8
       rect:
         serializedVersion: 2
         x: 160
@@ -2210,7 +2189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_100
+      name: h9
       rect:
         serializedVersion: 2
         x: 176
@@ -2315,7 +2294,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_105
+      name: c-5
       rect:
         serializedVersion: 2
         x: 64
@@ -2336,7 +2315,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_106
+      name: c-6
       rect:
         serializedVersion: 2
         x: 80
@@ -2357,7 +2336,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_107
+      name: c-7
       rect:
         serializedVersion: 2
         x: 96
@@ -2378,7 +2357,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_108
+      name: c-8
       rect:
         serializedVersion: 2
         x: 112
@@ -2399,7 +2378,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_109
+      name: c-9
       rect:
         serializedVersion: 2
         x: 128
@@ -2420,7 +2399,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_110
+      name: c-10
       rect:
         serializedVersion: 2
         x: 144
@@ -2525,7 +2504,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_115
+      name: c-11
       rect:
         serializedVersion: 2
         x: 64
@@ -2546,7 +2525,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_116
+      name: c-12
       rect:
         serializedVersion: 2
         x: 80
@@ -2567,7 +2546,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_117
+      name: c-13
       rect:
         serializedVersion: 2
         x: 96
@@ -2588,7 +2567,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_118
+      name: c-14
       rect:
         serializedVersion: 2
         x: 112
@@ -2609,7 +2588,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_119
+      name: c-15
       rect:
         serializedVersion: 2
         x: 128
@@ -2630,7 +2609,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSetAdvance-1_120
+      name: c-16
       rect:
         serializedVersion: 2
         x: 144
@@ -2728,66 +2707,21 @@ TextureImporter:
       7: -121901555
       8: -1750744477
       9: -800992918
-      TileSetAdvance-1_10: 1331789617
-      TileSetAdvance-1_100: -1293985198
-      TileSetAdvance-1_105: 462339269
-      TileSetAdvance-1_106: 53247715
-      TileSetAdvance-1_107: -1289325279
-      TileSetAdvance-1_108: -311697403
-      TileSetAdvance-1_109: 1210776081
-      TileSetAdvance-1_11: 1304419453
-      TileSetAdvance-1_110: -427093932
-      TileSetAdvance-1_115: 1148556846
-      TileSetAdvance-1_116: 247344146
-      TileSetAdvance-1_117: -1762775323
-      TileSetAdvance-1_118: -1211787648
-      TileSetAdvance-1_119: 518528059
-      TileSetAdvance-1_120: 1893276116
-      TileSetAdvance-1_20: -1782713560
-      TileSetAdvance-1_21: 2052539832
-      TileSetAdvance-1_22: -353425302
-      TileSetAdvance-1_23: -1395168979
-      TileSetAdvance-1_32: -270119860
-      TileSetAdvance-1_33: 296776274
-      TileSetAdvance-1_34: 1550757794
-      TileSetAdvance-1_35: 350473085
-      TileSetAdvance-1_47: 1474991185
       TileSetAdvance-1_52: -845157726
       TileSetAdvance-1_53: 456114647
       TileSetAdvance-1_54: -296912186
       TileSetAdvance-1_55: 1921572251
       TileSetAdvance-1_56: 2142382271
-      TileSetAdvance-1_57: 1413158350
-      TileSetAdvance-1_58: 498212242
-      TileSetAdvance-1_59: -1510417513
       TileSetAdvance-1_64: 51973751
       TileSetAdvance-1_65: -399625483
       TileSetAdvance-1_66: -535426360
       TileSetAdvance-1_67: -1546533479
       TileSetAdvance-1_68: 21876206
-      TileSetAdvance-1_69: -1654400629
-      TileSetAdvance-1_70: -856517534
-      TileSetAdvance-1_71: 501967069
       TileSetAdvance-1_76: -1047510678
       TileSetAdvance-1_77: -705345450
       TileSetAdvance-1_78: 800867802
       TileSetAdvance-1_79: 1604369970
-      TileSetAdvance-1_8: 1062752851
       TileSetAdvance-1_80: -1590232496
-      TileSetAdvance-1_81: 1121445183
-      TileSetAdvance-1_82: -345524266
-      TileSetAdvance-1_83: -1469990993
-      TileSetAdvance-1_86: -1320688228
-      TileSetAdvance-1_87: 1457863897
-      TileSetAdvance-1_88: -2145798655
-      TileSetAdvance-1_89: -1523982111
-      TileSetAdvance-1_9: 547754237
-      TileSetAdvance-1_90: -1465167670
-      TileSetAdvance-1_95: -1059205907
-      TileSetAdvance-1_96: 1985281846
-      TileSetAdvance-1_97: -1270310190
-      TileSetAdvance-1_98: -1610901413
-      TileSetAdvance-1_99: 1681577127
       a-1: -313101797
       a-10: 1646906111
       a-11: 1851328602
@@ -2804,6 +2738,50 @@ TextureImporter:
       asset-1: 985000022
       asset-2: -1561934448
       asset-3: 454890775
+      c-1: -1320688228
+      c-10: -427093932
+      c-11: 1148556846
+      c-12: 247344146
+      c-13: -1762775323
+      c-14: -1211787648
+      c-15: 518528059
+      c-16: 1893276116
+      c-2: 1457863897
+      c-3: 1985281846
+      c-4: -1270310190
+      c-5: 462339269
+      c-6: 53247715
+      c-7: -1289325279
+      c-8: -311697403
+      c-9: 1210776081
+      h1: 1121445183
+      h2: -345524266
+      h3: -1469990993
+      h4: -2145798655
+      h5: -1523982111
+      h6: -1465167670
+      h7: -1610901413
+      h8: 1681577127
+      h9: -1293985198
+      r1: 1413158350
+      r2: 498212242
+      r3: -1510417513
+      r4: -1654400629
+      r5: -856517534
+      r6: 501967069
+      s1: 1062752851
+      s10: 296776274
+      s11: 1550757794
+      s12: 350473085
+      s13: 1474991185
+      s2: 547754237
+      s3: 1331789617
+      s4: 1304419453
+      s5: -1782713560
+      s6: 2052539832
+      s7: -353425302
+      s8: -1395168979
+      s9: -270119860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
