@@ -19,23 +19,25 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        foreach (KeyCode key in keysAttack)
+        if (playerMovement.Control == true)
         {
-            if (Input.GetKeyDown(key) && cooldownTimer > attackCooldown)
+            foreach (KeyCode key in keysAttack)
             {
-                OnAttackAnimation();
-                break;
+                if (Input.GetKeyDown(key) && cooldownTimer > attackCooldown && playerMovement.body.velocity.y == 0)
+                {
+                    OnAttackAnimation();
+                    break;
+                }
+                else
+                if (Input.GetKeyDown(key) && cooldownTimer > attackCooldown && playerMovement.body.velocity.y != 0)
+                {
+                    animator.SetTrigger("isJumping_Shoot");
+                    break;
+                }
             }
         }
 
         cooldownTimer += Time.deltaTime;
-    }
-
-    private void Shooting()
-    {
-        animator.SetTrigger("isAttack");
-        fireballs[FindFireball()].transform.position = firePoint.position;
-        fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
     private int FindFireball()
@@ -50,9 +52,16 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnAttackAnimation()
     {
-        animator.SetTrigger("isAttack");
+        if (playerMovement.body.velocity.y == 0)
+        {
+            playerMovement.Control = false;
+            animator.SetTrigger("isAttack");
+        }
+        else
+        if (playerMovement.body.velocity.y != 0)
+        {
+            animator.SetTrigger("isAttack");
+            animator.SetTrigger("isJumping_Shoot");
+        }
     }
-
-
-    
 }
