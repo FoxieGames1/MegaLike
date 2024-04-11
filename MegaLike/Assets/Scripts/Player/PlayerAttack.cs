@@ -23,15 +23,9 @@ public class PlayerAttack : MonoBehaviour
         {
             foreach (KeyCode key in keysAttack)
             {
-                if (Input.GetKeyDown(key) && cooldownTimer > attackCooldown && playerMovement.body.velocity.y == 0)
+                if (Input.GetKeyDown(key) && cooldownTimer > attackCooldown)
                 {
                     OnAttackAnimation();
-                    break;
-                }
-                else
-                if (Input.GetKeyDown(key) && cooldownTimer > attackCooldown && playerMovement.body.velocity.y != 0)
-                {
-                    animator.SetTrigger("isJumping_Shoot");
                     break;
                 }
             }
@@ -52,16 +46,13 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnAttackAnimation()
     {
-        if (playerMovement.body.velocity.y == 0)
-        {
-            playerMovement.Control = false;
-            animator.SetBool("isAttack", true);
-        }
-        else
-        if (playerMovement.body.velocity.y != 0)
-        {
-            animator.SetBool("isAttack", false);
-            animator.SetBool("isJumping_Shoot", false);
-        }
+        animator.SetTrigger("isAttack");
+
+    }
+    private void Shooting()
+    {
+        animator.SetTrigger("isAttack");
+        fireballs[FindFireball()].transform.position = firePoint.position;
+        fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 }

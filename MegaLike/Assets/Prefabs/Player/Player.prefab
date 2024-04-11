@@ -262,6 +262,7 @@ MonoBehaviour:
     m_Bits: 256
   Start: 1
   TouchGrass: 0
+  Control: 1
   TouchingStairs: 0
   stairsSpeed: 4
 --- !u!114 &3024148663404181001
@@ -279,10 +280,6 @@ MonoBehaviour:
   firePoint: {fileID: 127699873049595284}
   keysAttack: 78000000
   fireballs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

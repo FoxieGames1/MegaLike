@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float gravityRBD2;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
-    public Rigidbody2D body;
+    private  Rigidbody2D body;
     private BoxCollider2D boxCollider;
     private Animator animator;
     private PlayerAttack playerAttack;
@@ -31,17 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Control == true)
-        {
-            horizontalInput = Input.GetAxis("Horizontal");
-        }
-        else
-        {
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", false);
-            animator.SetBool("isMoving", false);
-        }
 
+        horizontalInput = Input.GetAxis("Horizontal");
         HandleStairsInteractuable();
         HandleMovement();
         HandleJump();
@@ -49,13 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleMovement()
     {
-        if (Control == true)
-        {
-            if (horizontalInput > 0.01f) transform.localScale = Vector3.one;
-            else if (horizontalInput < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else { horizontalInput = 0; }
-
+        if (horizontalInput > 0.01f) transform.localScale = Vector3.one;
+        else if (horizontalInput < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
         if (horizontalInput != 0 && isGrounded())
         {
             animator.SetBool("isMoving", true);
@@ -96,7 +82,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else wallJumpCooldown += Time.deltaTime;
 
-        // Manejo de la animación de caída
         if (!isGrounded() && !onWall())
         {
             animator.SetBool("isFalling", true);
@@ -135,19 +120,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Control == true)
+        if (isGrounded())
         {
-            if (isGrounded())
-            {
-                body.velocity = new Vector2(body.velocity.x, jumpPower);
-                animator.SetTrigger("isJumping");
-                animator.SetBool("isFalling", false);
-            }
-            else if (!onWall())
-            {
-                animator.SetBool("isFalling", true);
-            }
+            body.velocity = new Vector2(body.velocity.x, jumpPower);
+            animator.SetTrigger("isJumping");
+            animator.SetBool("isFalling", false);
         }
+        else if (!onWall())
+        {
+            animator.SetBool("isFalling", true);
+        }
+
 
         if (onWall() && !isGrounded())
         {
