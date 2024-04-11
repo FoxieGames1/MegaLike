@@ -284,10 +284,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3024148663404181001, guid: 37abf94c647f54f42a55e127d7847061, type: 3}
-      propertyPath: fireballs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3024148663404181001, guid: 37abf94c647f54f42a55e127d7847061, type: 3}
       propertyPath: fireballs.Array.data[0]
       value: 
       objectReference: {fileID: 4946372}
