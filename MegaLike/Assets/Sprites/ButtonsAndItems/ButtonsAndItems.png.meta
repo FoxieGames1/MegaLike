@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 44148b2f916ab9540942834f79c6978e
+guid: a0246eca58de5fb4996dc16513530ae8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 1024
     resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
@@ -110,306 +110,33 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UIPixelFontSimple_0
+      name: ButtonsAndItems_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
-        width: 80
-        height: 16
+        y: 53
+        width: 48
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd819eb1bc4bb474e92ea91d8b8e341e
-      internalID: -38447702
+      spriteID: ba800f073550aeb488037489f81b9ce1
+      internalID: -1063845253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIPixelFontSimple_1
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9176e2f0bd5bf34f8f42f05a621979b
-      internalID: -1056420030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_2
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e26fdd913e8dd51428a78b3da9e88504
-      internalID: 1306505357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_3
+      name: ButtonsAndItems_1
       rect:
         serializedVersion: 2
         x: 96
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75ec045062f1e7742b55036462113bba
-      internalID: 1641282361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_4
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c7a374cde49cae42a12f4073ea9f87d
-      internalID: 1436222629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_5
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dfdfe22a4d1c27418287b18d549f4c2
-      internalID: -647629136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdacfea7a512bc643ace6b5ac095c546
-      internalID: -64899886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 80
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35a2449172307dc4cbc0a1ac671e4075
-      internalID: -1093071734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 632e63262f5e2f5479dcac0873a8c9c2
-      internalID: 1636560504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 32
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c01965e4a6906a4689be26fbb0f6f3b
-      internalID: 512356224
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_10
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 112
-        width: 80
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a12a7032456ad148ae3deeaf0c42051
-      internalID: 344037413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_11
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 64
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d57638cec4b2c63439388489909da294
-      internalID: 1930798451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 128
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ebee66f13a6f7f4582a8d9bda14408c
-      internalID: 1585997752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_13
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 64
-        width: 64
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05f1cb605a8222e49a4205ff1239a51b
-      internalID: 1488839449
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_14
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 80
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -418,18 +145,228 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2b9961c8b0f48f41bc4e2828ca4234e
-      internalID: 1645428745
+      spriteID: cf27b6e6c14670b40983ef4326311de2
+      internalID: -1863035550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIPixelFontSimple_15
+      name: ButtonsAndItems_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cfc44388bb61e48b74f5da0b397e99
+      internalID: -313963489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a88dc64dfda51f4eb6fb506ce6eac85
+      internalID: -425868730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0b091314b961b47b89620c56966de6
+      internalID: -949258120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_5
       rect:
         serializedVersion: 2
         x: 0
         y: 32
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3636494411cda418136d37dbf20a95
+      internalID: 1543915651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb60d8368c78863498046940efd63998
+      internalID: 2046625828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755301b56efbf2d498939e8f7c0ece6b
+      internalID: -1736762905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b93678603c9224888ecb200999d1c6
+      internalID: -744231242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746caec362576d64eacbb3ca2cfeeaec
+      internalID: -590997623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d990d8991c82884e8f939456944414b
+      internalID: 1666857698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480124623d7edd14ca30993c6486ae57
+      internalID: -892979987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
         width: 64
         height: 16
       alignment: 0
@@ -439,40 +376,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e693f5ca9d1c10e488e75e9f10f30830
-      internalID: 862287886
+      spriteID: f1d1b7288632343419ad708ab1e6b822
+      internalID: 1616410445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIPixelFontSimple_16
+      name: ButtonsAndItems_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 96
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6b11861383431640972e27a4ecacdd6
-      internalID: 1321574936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIPixelFontSimple_17
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 64
         y: 0
-        width: 80
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -481,8 +397,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b7359bb911e37545b40d9b8567865e5
-      internalID: 538641270
+      spriteID: b67ca7b008e73c84ea9d1efcb3fdf7ad
+      internalID: 1771910802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_14
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f472a400e878b489819344c465b2c2
+      internalID: -991040207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_15
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515b22340be727244ab5b6787f97237f
+      internalID: -1249852286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_16
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4113258026335f0459323eb17f7dc016
+      internalID: -50361336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_17
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 53
+        width: 48
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551620449e477964a93a26456e21870f
+      internalID: 676358588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_18
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 53
+        width: 48
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495aacb0be542c5418b992e4bb9ca267
+      internalID: 390097537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsAndItems_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae587a8d5514f6f4288370bb53e80bee
+      internalID: -1791984640
       vertices: []
       indices: 
       edges: []
@@ -498,24 +540,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UIPixelFontSimple_0: -38447702
-      UIPixelFontSimple_1: -1056420030
-      UIPixelFontSimple_10: 344037413
-      UIPixelFontSimple_11: 1930798451
-      UIPixelFontSimple_12: 1585997752
-      UIPixelFontSimple_13: 1488839449
-      UIPixelFontSimple_14: 1645428745
-      UIPixelFontSimple_15: 862287886
-      UIPixelFontSimple_16: 1321574936
-      UIPixelFontSimple_17: 538641270
-      UIPixelFontSimple_2: 1306505357
-      UIPixelFontSimple_3: 1641282361
-      UIPixelFontSimple_4: 1436222629
-      UIPixelFontSimple_5: -647629136
-      UIPixelFontSimple_6: -64899886
-      UIPixelFontSimple_7: -1093071734
-      UIPixelFontSimple_8: 1636560504
-      UIPixelFontSimple_9: 512356224
+      ButtonsAndItems_0: -1063845253
+      ButtonsAndItems_1: -1863035550
+      ButtonsAndItems_10: 1666857698
+      ButtonsAndItems_11: -892979987
+      ButtonsAndItems_12: 1616410445
+      ButtonsAndItems_13: 1771910802
+      ButtonsAndItems_14: -991040207
+      ButtonsAndItems_15: -1249852286
+      ButtonsAndItems_16: -50361336
+      ButtonsAndItems_17: 676358588
+      ButtonsAndItems_18: 390097537
+      ButtonsAndItems_19: -1791984640
+      ButtonsAndItems_2: -313963489
+      ButtonsAndItems_3: -425868730
+      ButtonsAndItems_4: -949258120
+      ButtonsAndItems_5: 1543915651
+      ButtonsAndItems_6: 2046625828
+      ButtonsAndItems_7: -1736762905
+      ButtonsAndItems_8: -744231242
+      ButtonsAndItems_9: -590997623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
