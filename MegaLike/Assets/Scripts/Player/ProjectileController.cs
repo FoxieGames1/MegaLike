@@ -40,12 +40,21 @@ public class Projectile : MonoBehaviour
         if (Mathf.Sign(localScaleX) != _direction) localScaleX = -localScaleX;
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!hit && collision.CompareTag("Enemy"))
         {
             hit = true;
             Deactivate(); // Desactiva la bala al chocar con un enemigo
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!hit && collision.gameObject.CompareTag("Wall")) 
+        {
+
         }
     }
 
