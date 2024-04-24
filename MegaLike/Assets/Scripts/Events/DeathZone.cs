@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    
-    public Transform respawnPoint;
     public PlayerHealth playerHealth;
     public GameObject gameOverUI;
 
@@ -13,19 +11,16 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            RespawnPlayer(other.gameObject);
+            KillPlayer(other.gameObject);
         }
     }
 
-    private void RespawnPlayer(GameObject player)
+    private void KillPlayer(GameObject player)
     {
         if (playerHealth != null)
         {
-            playerHealth.Respawn(respawnPoint.position);
-        }
-        else
-        {
-            player.transform.position = respawnPoint.position;
+            player.SetActive(false);
+            ShowGameOverUI();
         }
     }
 
