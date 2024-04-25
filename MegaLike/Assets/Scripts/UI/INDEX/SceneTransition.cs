@@ -12,6 +12,11 @@ public class SceneTransition : MonoBehaviour
         StartCoroutine(TransitionToScene(sceneName));
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     IEnumerator TransitionToScene(string sceneName)
     {
         transitionAnimator.SetTrigger("Start");
