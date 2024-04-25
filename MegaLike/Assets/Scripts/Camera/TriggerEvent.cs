@@ -18,7 +18,6 @@ public class TriggerEvent : MonoBehaviour
 
     private void Start()
     {
-        // Encuentra la cámara principal de Cinemachine en la escena
         CinemachineBrain cinemachineBrain = FindObjectOfType<CinemachineBrain>();
 
         if (cinemachineBrain != null)
@@ -40,7 +39,6 @@ public class TriggerEvent : MonoBehaviour
             Debug.LogWarning("No se encontró una cámara de Cinemachine en la escena.");
         }
 
-        // Obtener una referencia al componente CameraSwitcher
         cameraSwitcher = FindObjectOfType<CameraSwitcher>();
         if (cameraSwitcher == null)
         {
@@ -50,10 +48,8 @@ public class TriggerEvent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Verificar si el jugador entró en el trigger
         if (other.CompareTag("Player"))
         {
-            // Pasar la referencia de la cámara secundaria al CameraSwitcher
             if (cameraSwitcher != null && cameraToSwitch != null)
             {
                 CinemachineBrain cinemachineBrain = FindObjectOfType<CinemachineBrain>();
@@ -86,10 +82,8 @@ public class TriggerEvent : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // Verificar si el jugador salió del trigger
         if (other.CompareTag("Player"))
         {
-            // Cambiar a la cámara principal cuando el jugador salga del trigger
             if (cameraSwitcher != null)
             {
                 CinemachineBrain cinemachineBrain = FindObjectOfType<CinemachineBrain>();
