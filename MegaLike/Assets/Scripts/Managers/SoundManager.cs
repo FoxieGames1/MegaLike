@@ -33,7 +33,6 @@ public class GameManagerSound : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Cambiar la música de la escena
         ChangeMusic(scene.buildIndex);
     }
 

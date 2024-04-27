@@ -74,4 +74,9 @@ public class IdleTimer : MonoBehaviour
             }
         }
     }
+
+    public void ResetTime()
+    {
+        idleTime = 0.0f;
+    }
 }
