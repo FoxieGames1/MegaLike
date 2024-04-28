@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
-public class GameManagerSound : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
-    public static GameManagerSound Instance;
+    public static SoundManager Instance;
 
-    [Header("Settings")]
-    public float defaultMusicVolume = 0.5f;
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioClip[] backgroundMusic;
+    private AudioSource backgroundMusicSource;
+    private bool isMusicPlaying = false;
 
-    [Header("Scene Music")]
-    public AudioClip[] sceneMusic;
-    private AudioSource musicSource;
+    private const string musicVolumeParameter = "Background";
 
     private void Awake()
     {
@@ -25,30 +26,47 @@ public class GameManagerSound : MonoBehaviour
             return;
         }
 
-        musicSource = gameObject.AddComponent<AudioSource>();
-        musicSource.volume = defaultMusicVolume;
+        backgroundMusicSource = gameObject.AddComponent<AudioSource>();
+        backgroundMusicSource.loop = true;
+    }
 
+    private void Start()
+    {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        ChangeMusic(scene.buildIndex);
+        PlayBackgroundMusic();
     }
 
-    public void ChangeMusic(int sceneIndex)
+    public void PlayBackgroundMusic()
     {
-        musicSource.Stop();
-
-        if (sceneIndex >= 0 && sceneIndex < sceneMusic.Length && sceneMusic[sceneIndex] != null)
+        if (!isMusicPlaying)
         {
-            musicSource.clip = sceneMusic[sceneIndex];
-            musicSource.Play();
+            if (backgroundMusic.Length > 0)
+            {
+                int randomIndex = Random.Range(0, backgroundMusic.Length);
+                AudioClip randomClip = backgroundMusic[randomIndex];
+                backgroundMusicSource.clip = randomClip;
+                backgroundMusicSource.Play();
+                isMusicPlaying = true;
+            }
+            else
+            {
+                Debug.LogWarning("No background music available!");
+            }
         }
+    }
+
+    public void StopBackgroundMusic()
+    {
+        backgroundMusicSource.Stop();
+        isMusicPlaying = false;
     }
 
     public void SetMusicVolume(float volume)
     {
-        musicSource.volume = volume;
+        audioMixer.SetFloat(musicVolumeParameter, volume);
     }
 }
