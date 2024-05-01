@@ -39,12 +39,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void HandleMovement()
-    {
+    {  
         if (horizontalInput > 0.01f) transform.localScale = Vector3.one;
         else if (horizontalInput < -0.01f) transform.localScale = new Vector3(-1, 1, 1);
         if (horizontalInput != 0 && isGrounded())
         {
             animator.SetBool("isMoving", true);
+            AudioManager.Instance.PlayRandomFootstepSound();
+
         }
         else
         {
@@ -124,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpPower);
             animator.SetTrigger("isJumping");
+            AudioManager.Instance.PlaySFX("Jump");
             animator.SetBool("isFalling", false);
         }
         else if (!onWall())
@@ -139,8 +142,7 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 10, 0);
                 transform.localScale = new Vector3(-Mathf.Sign(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
-            else
-                body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
+            else body.velocity = new Vector2(-Mathf.Sign(transform.localScale.x) * 3, 6);
 
             wallJumpCooldown = 0;
         }
@@ -156,5 +158,13 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
         return raycastHit.collider != null;
+    }
+    public void ApplyKnockback(Vector2 direction, float force)
+    {
+        // Detenemos el movimiento actual del jugador
+        body.velocity = Vector2.zero;
+
+        // Aplicamos el knockback en la dirección especificada
+        body.AddForce(direction * force, ForceMode2D.Impulse);
     }
 }

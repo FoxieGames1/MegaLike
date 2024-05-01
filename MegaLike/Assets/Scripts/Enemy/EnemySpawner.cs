@@ -11,13 +11,12 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SpawnRandomEnemy", 0.0f, spawnInterval);
+        //InvokeRepeating("SpawnRandomEnemy", 0.0f, spawnInterval);
     }
 
     private void SpawnRandomEnemy()
     {
-        if (currentEnemies >= maxEnemies)
-            return;
+        if (currentEnemies >= maxEnemies) return;
 
         int randomIndex = Random.Range(0, enemyPrefabs.Length);
         SpawnEnemy(randomIndex);
@@ -36,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         if (enemyMovement != null)
         {
             // Establecer la dirección de movimiento desde el inspector
-            enemyMovement.SetMoveDirection(moveDirection);
+            //enemyMovement.SetMoveDirection(moveDirection);
         }
 
         currentEnemies++;

@@ -22,6 +22,7 @@ public class SceneTransition : MonoBehaviour
         transitionAnimator.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        AudioManager.Instance.PlayMusicByScene(sceneName);
         while (!asyncLoad.isDone)
         {
             yield return null;

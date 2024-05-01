@@ -1,17 +1,27 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
     public float speed = 2f;
     [SerializeField] private bool movingRight = true;
     public LayerMask wallLayer;
-    public float rayDistance = 0.1f;
+    public LayerMask enemyLayer;
+    public LayerMask playerLayer;
+    public float rayDistance = 0.2f;
     public float rayDistanceEnemy = 0.3f;
+    public Transform leftDetectionPoint;
+    public Transform rightDetectionPoint;
     private SpriteRenderer spriteRenderer;
-    private bool isAlive = true;
-
 
     private Animator animator;
+
+    private bool isStopped = false;
+    private bool isAlive = true;
+    private bool isWaiting = false;
+    [SerializeField] private float resumeTimeMovement;
+
+
 
     private void Awake()
     {
@@ -19,37 +29,84 @@ public class EnemyMovement : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (isAlive)
+        if (!isStopped)
         {
-            Move();
-            UpdateAnimation();
+            if (!DetectWalls())
+            {
+                Move();
+            }
+
+            if (!DetectEnemies())
+            {
+                Move();
+            }
         }
+        UpdateAnimation();
     }
 
-    void Move()
+    private void Move()
     {
         Vector3 movement = CalculateMovement();
         movement *= speed * Time.deltaTime;
         transform.Translate(movement);
-        DetectWallsAndObstacles(movement);
     }
 
-    Vector3 CalculateMovement()
+    private Vector3 CalculateMovement()
     {
         return movingRight ? Vector3.right : Vector3.left;
     }
 
-    void DetectWallsAndObstacles(Vector3 movement)
+    private bool DetectWalls()
     {
-        RaycastHit2D wallHit = Physics2D.Raycast(transform.position, movement.normalized, rayDistance, wallLayer);
+        Vector3 direction = movingRight ? Vector3.right : Vector3.left;
+        RaycastHit2D wallHit = Physics2D.Raycast(transform.position, direction, rayDistance, wallLayer);
         if (wallHit.collider != null)
         {
             movingRight = !movingRight;
             FlipSprite();
-
+            return true;
         }
+        return false;
+    }
+
+    private bool DetectEnemies()
+    {
+        Vector3 direction = movingRight ? Vector3.right : Vector3.left;
+        RaycastHit2D hitLeft = Physics2D.Raycast(leftDetectionPoint.position, direction, rayDistance, enemyLayer);
+        RaycastHit2D hitRight = Physics2D.Raycast(rightDetectionPoint.position, direction, rayDistance, enemyLayer);
+
+        if (hitLeft.collider != null || hitRight.collider != null)
+        {
+            movingRight = !movingRight;
+            FlipSprite();
+            return true;
+        }
+        return false;
+    }
+
+    void DetectPlayer()
+    {
+        RaycastHit2D playerHit = Physics2D.Raycast(transform.position, CalculateMovement(), rayDistanceEnemy, playerLayer);
+        if (playerHit.collider != null)
+        {
+            isStopped = true;
+            StartCoroutine(ResumeMovement());
+        }
+    }
+
+    private IEnumerator ResumeMovement()
+    {
+        isWaiting = true;
+        yield return new WaitForSeconds(resumeTimeMovement);
+        isStopped = false;
+        isWaiting = false;
+    }
+
+    private void FlipSprite()
+    {
+        spriteRenderer.flipX = !spriteRenderer.flipX;
     }
 
     void UpdateAnimation()
@@ -64,15 +121,9 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-
-    public void SetMoveDirection(Vector2 direction)
+    public void SetStopped(bool stopped)
     {
-        movingRight = direction.x > 0f;
-    }
-
-    void FlipSprite()
-    {
-        spriteRenderer.flipX = !spriteRenderer.flipX;
+        isStopped = stopped;
     }
 
     public void SetAlive(bool alive)

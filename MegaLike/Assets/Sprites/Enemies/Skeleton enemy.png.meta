@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton enemy_0
+      name: A1
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_1
+      name: A2
       rect:
         serializedVersion: 2
         x: 64
@@ -152,7 +152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_2
+      name: A3
       rect:
         serializedVersion: 2
         x: 128
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_3
+      name: A4
       rect:
         serializedVersion: 2
         x: 192
@@ -194,7 +194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_4
+      name: A5
       rect:
         serializedVersion: 2
         x: 256
@@ -215,7 +215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_5
+      name: A6
       rect:
         serializedVersion: 2
         x: 320
@@ -236,7 +236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_6
+      name: A7
       rect:
         serializedVersion: 2
         x: 384
@@ -257,7 +257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_7
+      name: A8
       rect:
         serializedVersion: 2
         x: 448
@@ -278,7 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_8
+      name: A9
       rect:
         serializedVersion: 2
         x: 512
@@ -299,7 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_9
+      name: A10
       rect:
         serializedVersion: 2
         x: 576
@@ -320,7 +320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_10
+      name: A11
       rect:
         serializedVersion: 2
         x: 640
@@ -341,7 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_11
+      name: A12
       rect:
         serializedVersion: 2
         x: 704
@@ -362,7 +362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Skeleton enemy_12
+      name: A13
       rect:
         serializedVersion: 2
         x: 768
@@ -1065,6 +1065,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      A1: -687848651
+      A10: 1355182385
+      A11: -1265978381
+      A12: 918555546
+      A13: 1740839354
+      A2: 1070792487
+      A3: 938438589
+      A4: -1351131968
+      A5: -1826031187
+      A6: 1355311185
+      A7: 1422647506
+      A8: -1161860055
+      A9: 262240697
       Movement_1: 129446129
       Movement_10: -361584311
       Movement_11: 872319347
@@ -1077,22 +1090,9 @@ TextureImporter:
       Movement_7: -1785120049
       Movement_8: -960669699
       Movement_9: -1591010567
-      Skeleton enemy_0: -687848651
-      Skeleton enemy_1: 1070792487
-      Skeleton enemy_10: -1265978381
-      Skeleton enemy_11: 918555546
-      Skeleton enemy_12: 1740839354
-      Skeleton enemy_2: 938438589
-      Skeleton enemy_3: -1351131968
-      Skeleton enemy_4: -1826031187
       Skeleton enemy_42: 1373842416
       Skeleton enemy_43: 357997466
       Skeleton enemy_44: 1216597507
-      Skeleton enemy_5: 1355311185
-      Skeleton enemy_6: 1422647506
-      Skeleton enemy_7: -1161860055
-      Skeleton enemy_8: 262240697
-      Skeleton enemy_9: 1355182385
       damaged-1: -554035686
       damaged-2: -180384031
       die-1: -1712414505

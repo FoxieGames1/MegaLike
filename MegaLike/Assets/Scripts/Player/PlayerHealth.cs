@@ -1,32 +1,61 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
+    public int damageAmount;
+    public float damageInterval;
+    public Color damageColor;
+    public float flashDuration;
+
+    public SpriteRenderer playerSprite;
     public Image healthBar;
     public GameObject gameOverUI;
-    public int damageAmount;
+    private PlayerMovement playerMovement;
+    private Rigidbody2D rb;
 
-
+    private bool canTakeDamage = true;
+    public float knockbackForce;
 
     private void Start()
     {
+        playerMovement = GetComponent<PlayerMovement>();
+
         currentHealth = maxHealth;
+        rb = GetComponent<Rigidbody2D>();
         UpdateHealthUI();
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount, Vector2 enemyPosition)
     {
-        currentHealth -= damageAmount;
-        if (currentHealth == 0)
+        if (canTakeDamage)
         {
-            currentHealth = 0;
-            Destroy(gameObject);
-            ShowGameOverUI();
+            AudioManager.Instance.PlaySFX("SlashEnemy");
+            currentHealth -= damageAmount;
+            if (currentHealth <= 0)
+            {
+                ShowGameOverUI();
+                currentHealth = 0;
+                Destroy(gameObject);
+            }
+
+            UpdateHealthUI();
+            Vector2 knockbackDirection = ((Vector2)transform.position - enemyPosition).normalized;
+            playerMovement.ApplyKnockback(knockbackDirection, knockbackForce);
+            StartCoroutine(DamageCooldown());
+            StartCoroutine(FlashSprite());
+
         }
-        UpdateHealthUI();
+    }
+
+    private IEnumerator DamageCooldown()
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(damageInterval);
+        canTakeDamage = true;
     }
 
     public void Heal(int healAmount)
@@ -41,26 +70,35 @@ public class PlayerHealth : MonoBehaviour
 
     private void UpdateHealthUI()
     {
-        healthBar.fillAmount = (float)currentHealth / maxHealth;
+        if (healthBar != null)
+        {
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+            healthBar.fillAmount = (float)currentHealth / maxHealth;
+        }
     }
 
     private void ShowGameOverUI()
     {
-        gameOverUI.SetActive(true); 
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (gameOverUI != null)
         {
-            TakeDamage(damageAmount);
+            gameOverUI.SetActive(false);
         }
     }
 
     public void Respawn(Vector3 respawnPoint)
     {
         currentHealth = maxHealth;
-        transform.position = respawnPoint; 
+        transform.position = respawnPoint;
         UpdateHealthUI();
     }
+
+    private IEnumerator FlashSprite()
+    {
+        Color originalColor = playerSprite.color;
+        playerSprite.color = damageColor; 
+        yield return new WaitForSeconds(flashDuration);
+
+        playerSprite.color = originalColor;
+    }
+
 }

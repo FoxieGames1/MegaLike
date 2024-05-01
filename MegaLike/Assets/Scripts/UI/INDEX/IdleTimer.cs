@@ -47,6 +47,7 @@ public class IdleTimer : MonoBehaviour
         contentSubtitle.SetActive(false);
         isTitleOpen = false;
         idleTime = 0.0f;
+        AudioManager.Instance.PlaySFX("Click");
     }
 
     void ShowTitle()

@@ -37,7 +37,7 @@ public class DeathZone : MonoBehaviour
         if (gameOverUI != null)
         {
             gameOverUI.SetActive(true);
-            Time.timeScale = 0f;
+            Time.timeScale = 1f;
         }
     }
 }

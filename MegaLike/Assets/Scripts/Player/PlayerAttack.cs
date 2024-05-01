@@ -47,12 +47,16 @@ public class PlayerAttack : MonoBehaviour
     public void OnAttackAnimation()
     {
         animator.SetTrigger("isAttack");
-
     }
     private void Shooting()
     {
         animator.SetTrigger("isAttack");
         fireballs[FindFireball()].transform.position = firePoint.position;
         fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+    }
+
+    private void SoundShooting()
+    {
+        AudioManager.Instance.PlaySFX("BowRelease");
     }
 }

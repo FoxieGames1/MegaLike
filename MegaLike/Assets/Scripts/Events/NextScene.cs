@@ -5,16 +5,15 @@ public class NextScene : MonoBehaviour
 {
     public GameObject levelCompleteUI;
     public TextMeshProUGUI pointsText;
-    //public Button nextLevelButton;
 
     private void Start()
     {
-        HideLevelCompleteUI(); // Oculta la pantalla de nivel completado al inicio
+        HideLevelCompleteUI(); 
     }
 
     public void ShowLevelCompleteUI()
     {
-        levelCompleteUI.SetActive(true); // Muestra la pantalla de nivel completado
+        levelCompleteUI.SetActive(true);
         
         //pointsText.text = "Points: " + PlayerPoints.points.ToString(); // Actualiza el texto con los puntos recolectados
     }
@@ -24,9 +23,8 @@ public class NextScene : MonoBehaviour
         levelCompleteUI.SetActive(false); // Oculta la pantalla de nivel completado
     }
 
-    // Método para manejar el evento del botón para continuar al siguiente nivel
     public void NextLevelButtonOnClick()
     {
-        // Aquí puedes cargar el siguiente nivel o realizar cualquier otra acción necesaria
+
     }
 }
