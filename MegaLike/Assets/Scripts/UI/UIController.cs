@@ -28,6 +28,14 @@ public class UIController : MonoBehaviour
         UpdateButtonSprites();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ToggleSettingsPanel();
+        }
+    }
+
     public void ToggleMusic()
     {
         musicEnabled = !musicEnabled;
