@@ -8,10 +8,14 @@ public class EnemyMovement : MonoBehaviour
     public LayerMask wallLayer;
     public LayerMask enemyLayer;
     public LayerMask playerLayer;
+    public LayerMask groundLayer;
     public float rayDistance = 0.2f;
     public float rayDistanceEnemy = 0.3f;
+    public float groundRayDistance = 0.3f;
     public Transform leftDetectionPoint;
     public Transform rightDetectionPoint;
+    public Transform groundDetectionPointLeft;
+    public Transform groundDetectionPointRight;
     private SpriteRenderer spriteRenderer;
 
     private Animator animator;
@@ -56,6 +60,20 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 CalculateMovement()
     {
         return movingRight ? Vector3.right : Vector3.left;
+    }
+
+    private bool DetectGroundLeft()
+    {
+        Vector3 direction = movingRight ? Vector3.right : Vector3.left;
+        RaycastHit2D groundHit = Physics2D.Raycast(groundDetectionPointLeft.position, direction, groundRayDistance, groundLayer);
+        return groundHit.collider != null;
+    }
+
+    private bool DetectGroundRight()
+    {
+        Vector3 direction = movingRight ? Vector3.right : Vector3.left;
+        RaycastHit2D groundHit = Physics2D.Raycast(groundDetectionPointRight.position, direction, groundRayDistance, groundLayer);
+        return groundHit.collider != null;
     }
 
     private bool DetectWalls()

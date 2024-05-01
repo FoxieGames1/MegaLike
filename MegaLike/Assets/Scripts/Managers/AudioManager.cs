@@ -19,6 +19,9 @@ public class AudioManager : MonoBehaviour
     private const float initializeVolume = 0.5f;
     public float fadeDurationMusic = 1f;
 
+    public bool IsSFXEnabled { get; internal set; }
+    public bool IsMusicEnabled { get; internal set; }
+
     private void Awake()
     {
         if (Instance == null)

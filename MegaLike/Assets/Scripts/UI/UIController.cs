@@ -7,19 +7,62 @@ public class UIController : MonoBehaviour
     private const string musicVolumeKey = "MusicVolume";
     private const string sfxVolumeKey = "SFXVolume";
     public GameObject settingsPanel;
+    public Button musicButton;
+    public Button sfxButton;
 
+    public Sprite musicOnSprite;
+    public Sprite musicOffSprite;
+    public Sprite sfxOnSprite;
+    public Sprite sfxOffSprite;
+
+    private Image musicButtonImage;
+    private Image sfxButtonImage;
+    private bool musicEnabled = true;
+    private bool sfxEnabled = true;
 
     private void Start()
     {
         LoadVolumeSettings();
+        musicButtonImage = musicButton.GetComponent<Image>();
+        sfxButtonImage = sfxButton.GetComponent<Image>();
+        UpdateButtonSprites();
     }
 
-    private void Update()
+    public void ToggleMusic()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ToggleSettingsPanel();
-        }
+        musicEnabled = !musicEnabled;
+        UpdateButtonSprites();
+        UpdateVolumeSettings();
+    }
+
+    public void ToggleSFX()
+    {
+        sfxEnabled = !sfxEnabled;
+        UpdateButtonSprites();
+        UpdateVolumeSettings();
+    }
+
+    private void UpdateButtonSprites()
+    {
+        musicButtonImage.sprite = musicEnabled ? musicOnSprite : musicOffSprite;
+        sfxButtonImage.sprite = sfxEnabled ? sfxOnSprite : sfxOffSprite;
+
+        // Habilitar o deshabilitar interactividad según el estado del sonido
+        musicButton.interactable = true;
+        sfxButton.interactable = true;
+    }
+
+    private void UpdateVolumeSettings()
+    {
+        float musicVolume = musicEnabled ? musicSlider.value : 0f;
+        float sfxVolume = sfxEnabled ? sfxSlider.value : 0f;
+
+        AudioManager.Instance.MusicVolume(musicVolume);
+        AudioManager.Instance.SFXVolume(sfxVolume);
+
+        PlayerPrefs.SetFloat(musicVolumeKey, musicVolume);
+        PlayerPrefs.SetFloat(sfxVolumeKey, sfxVolume);
+        PlayerPrefs.Save();
     }
 
     private void LoadVolumeSettings()
@@ -30,18 +73,7 @@ public class UIController : MonoBehaviour
         musicSlider.value = musicVolume;
         sfxSlider.value = sfxVolume;
 
-        AudioManager.Instance.MusicVolume(musicVolume);
-        AudioManager.Instance.SFXVolume(sfxVolume);
-    }
-
-    public void ToggleMusic()
-    {
-        AudioManager.Instance.ToggleMusic();
-    }
-
-    public void ToggleSFX()
-    {
-        AudioManager.Instance.ToggleSFX();
+        UpdateVolumeSettings();
     }
 
     public void MusicVolume()
@@ -83,6 +115,7 @@ public class UIController : MonoBehaviour
             GameManager.Instance.ResumeGame();
         }
     }
+
     public void ResumeGameFromSettings()
     {
         settingsPanel.SetActive(false);
