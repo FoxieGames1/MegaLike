@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
-    private EnemyMovement enemyMovement; // Referencia al componente EnemyMovement
+    private EnemyMovement enemyMovement;
     private Animator animator;
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb;
@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
-        enemyMovement = GetComponent<EnemyMovement>(); // Obtener referencia al componente EnemyMovement
+        enemyMovement = GetComponent<EnemyMovement>();
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();

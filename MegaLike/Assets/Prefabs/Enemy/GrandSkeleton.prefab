@@ -323,8 +323,8 @@ MonoBehaviour:
   enemyHealth: {fileID: 0}
   enemyAttack: {fileID: 0}
   sceneTransition: {fileID: 0}
-  increasedSpeedHalf: 5
-  increasedSpeedQuarter: 8
+  increasedSpeedHalf: 3
+  increasedSpeedQuarter: 6
   NameOfNextScene: LVL-1-1
   objTransition: {fileID: 0}
   TimeToNextScene: 5

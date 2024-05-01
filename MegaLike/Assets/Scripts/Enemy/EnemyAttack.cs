@@ -4,10 +4,14 @@ public class EnemyAttack : MonoBehaviour
 {
     public float detectionRange;
     public float attackRange;
+    public float attackCooldown;
     public LayerMask playerLayer;
     public int damage = 1;
     public Animator animator;
     public EnemyMovement enemyMovement;
+    public GameObject projectilePrefab;
+    public Transform shootPoint;
+    public float projectileSpeed;
 
     private Transform player;
     private bool isPlayerInRange = false;
@@ -54,7 +58,15 @@ public class EnemyAttack : MonoBehaviour
             {
                 playerHealth.TakeDamage(damage, transform.position);
             }
+            Vector2 shootDirection = (player.position - transform.position).normalized;
 
+            GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+
+            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = shootDirection * projectileSpeed;
+            }
             animator.SetTrigger("Attack");
         }
     }

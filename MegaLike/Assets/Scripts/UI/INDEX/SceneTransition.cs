@@ -12,12 +12,30 @@ public class SceneTransition : MonoBehaviour
         StartCoroutine(TransitionToScene(sceneName));
     }
 
+    public void ReturnScene(string sceneName)
+    {
+        StartCoroutine(TransitionReturnToScene(sceneName));
+
+    }
+
     public void Exit()
     {
         Application.Quit();
     }
 
     IEnumerator TransitionToScene(string sceneName)
+    {
+        transitionAnimator.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        AudioManager.Instance.PlayMusicByScene(sceneName);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+
+    IEnumerator TransitionReturnToScene(string sceneName)
     {
         transitionAnimator.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
